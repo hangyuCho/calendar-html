@@ -8,43 +8,68 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
+    <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
   </head>
 
   <body>
     <div class="calendar-container">
-      <div>
-        <div>単数グラフの日付を選択</div>
-        <div>複数日で比較する</div>
+      <div class="calendar-tab">
+        <div class="calendar-tab-button selected left">単数グラフの日付を選択</div>
+        <div class="calendar-tab-button right">複数日で比較する</div>
       </div>
-      <div>
-        left
-      </div>
-      <div>
-        <header class="calendar-header">
-          <p class="calendar-current-date"></p>
-          <div class="calendar-navigation">
-            <span id="calendar-prev" class="material-symbols-rounded">
-              chevron_left
-            </span>
-            <span id="calendar-next" class="material-symbols-rounded">
-              chevron_right
-            </span>
-          </div>
-        </header>
-
-        <div class="calendar-body">
-          <ul class="calendar-weekdays">
-            <li>Sun</li>
-            <li>Mon</li>
-            <li>Tue</li>
-            <li>Wed</li>
-            <li>Thu</li>
-            <li>Fri</li>
-            <li>Sat</li>
+      <div class="calendar-main-area">
+        <div class="calendar-main-left">
+          <ul class="calendar-type-selector">
+            <li data-idx="1">時間の選択</li>
+            <li data-idx="2">5分</li>
+            <li data-idx="3">15分</li>
+            <li data-idx="4">30分</li>
+            <li data-idx="5">1時間</li>
+            <li data-idx="6">3時間</li>
+            <li data-idx="7">6時間</li>
+            <li data-idx="8">12時間</li>
+            <li data-idx="9">24時間</li>
+            <li data-idx="10">7日間</li>
+            <li data-idx="11" class="selected">30日間</li>
+            <li data-idx="12">1年</li>
+            <li data-idx="13">2年</li>
           </ul>
-          <ul class="calendar-dates"></ul>
         </div>
+        <div class="calendar-main-right">
+          <header class="calendar-header">
+            <div class="calendar-navigation">
+              <span id="calendar-prev" class="material-symbols-rounded move-button">
+                chevron_left
+              </span>
+              <span class="calendar-current-date"></span>
+              <span id="calendar-next" class="material-symbols-rounded move-button">
+                chevron_right
+              </span>
+            </div>
+          </header>
 
+          <div class="calendar-body">
+            <ul class="calendar-weekdays">
+              <li>日</li>
+              <li>月</li>
+              <li>火</li>
+              <li>水</li>
+              <li>木</li>
+              <li>金</li>
+              <li>土</li>
+            </ul>
+            <ul class="calendar-dates"></ul>
+          </div>
+        </div>
+      </div>
+      <div class="calendar-bottom">
+        <button type="button">キャンセル</button>
+        <button type="button">
+          <span class="material-symbols-rounded">
+            done
+          </span>
+          適用する
+        </button>
       </div>
     </div>
   </body>

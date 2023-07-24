@@ -6,22 +6,24 @@ const day = document.querySelector(".calendar-dates");
 
 const currdate = document.querySelector(".calendar-current-date");
 
-const prenexIcons = document.querySelectorAll(".calendar-navigation span");
+const prenexIcons = document.querySelectorAll(
+  ".calendar-navigation span.move-button"
+);
 
 // Array of month names
 const months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
+  "1月",
+  "2月",
+  "3月",
+  "4月",
+  "5月",
+  "6月",
+  "7月",
+  "8月",
+  "9月",
+  "10月",
+  "11月",
+  "12月",
 ];
 
 // Function to generate the calendar
@@ -66,7 +68,7 @@ const manipulate = () => {
   // Update the text of the current date element
   // with the formatted current month and year
   console.log(currdate);
-  currdate.innerText = `${months[month]} ${year}`;
+  currdate.innerText = `${year}年 ${months[month]}`;
 
   // update the HTML of the dates element
   // with the generated calendar

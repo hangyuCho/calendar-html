@@ -23,7 +23,7 @@ body {
 .calendar-container header {
   display: flex;
   align-items: center;
-  padding: 25px 30px 10px;
+  padding: 25px 30px 0px;
   justify-content: space-between;
 }
 
@@ -31,7 +31,7 @@ header .calendar-navigation {
   display: flex;
 }
 
-header .calendar-navigation span {
+header .calendar-navigation span.move-button {
   height: 38px;
   width: 38px;
   margin: 0 1px;
@@ -40,11 +40,17 @@ header .calendar-navigation span {
   line-height: 38px;
   border-radius: 50%;
   user-select: none;
-  color: #aeabab;
+  color: #000;
   font-size: 1.9rem;
 }
 
-.calendar-navigation span:last-child {
+.calendar-navigation {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.calendar-navigation span:last-child.move-button {
   margin-right: -10px;
 }
 
@@ -54,11 +60,13 @@ header .calendar-navigation span:hover {
 
 header .calendar-current-date {
   font-weight: 500;
-  font-size: 1.45rem;
+  font-size: medium;
+  display: inline-flex;
+  align-items: center;
 }
 
 .calendar-body {
-  padding: 20px;
+  padding: 0.2rem;
 }
 
 .calendar-body ul {
@@ -77,10 +85,15 @@ header .calendar-current-date {
   font-size: 1.07rem;
   color: #414141;
 }
-
+.calendar-weekdays {
+  border-top: 1px solid #c4c4c4;
+  background-color: #f0f0f0;
+  padding: 0.4rem 0;
+}
 .calendar-body .calendar-weekdays li {
   cursor: default;
   font-weight: 500;
+  color: #a9a3a4;
 }
 
 .calendar-body .calendar-dates li {
@@ -111,9 +124,65 @@ header .calendar-current-date {
 }
 
 .calendar-dates li.active::before {
-  background: #6332c5;
+  background: #3782c1;
 }
 
 .calendar-dates li:not(.active):hover::before {
   background: #e4e1e1;
+}
+
+.calendar-tab {
+  display: flex;
+  justify-content: space-around;
+}
+.calendar-main-area {
+  display: flex;
+}
+
+.calendar-tab-button {
+  background-color: #d7e8f6;
+  color: #7099b8;
+  padding: 0.6rem 0.4rem;
+  text-align: center;
+  width: 50%;
+}
+
+.calendar-tab-button.selected {
+  background-color: #3f87bf;
+  color: #fff;
+}
+.calendar-tab-button.left {
+  border-top-left-radius: 0.5rem;
+}
+.calendar-tab-button.right {
+  border-top-right-radius: 0.5rem;
+}
+
+ul.calendar-type-selector {
+  padding: 0.6rem 0.4rem 0 0;
+  font-size: medium;
+  list-style: none;
+  text-align: right;
+}
+
+ul.calendar-type-selector > li {
+  padding: 0.2rem 0rem;
+}
+
+.calendar-main-left {
+  border-right: 1px solid #e0e0e0;
+  width: 10rem;
+}
+.calendar-main-right {
+}
+
+.calendar-bottom {
+  padding: 1rem 0;
+  display: flex;
+  border-top: 1px solid #e0e0e0;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.calendar-basic-button {
 }
